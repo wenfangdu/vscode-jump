@@ -223,7 +223,9 @@ export class Settings implements ExtensionComponent {
     const halfOfPad = pad >> 1
 
     return [
-      `image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" height="${height}" width="${width}"><rect width="${width}" height="${height}" rx="2" ry="2" fill="${backgroundColor}"></rect><text font-family="${fontFamily}" font-size="${fontSize}px" textLength="${
+      `image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" height="${height}" width="${
+        width + 5
+      }"><rect width="${width}" height="${height}" rx="2" ry="2" fill="${backgroundColor}"></rect><text font-family="${fontFamily}" font-size="${fontSize}px" textLength="${
         width - pad
       }" fill="${color}" x="${halfOfPad}" y="${fontSize * 0.8}">`,
       `</text></svg>`,
