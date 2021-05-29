@@ -1,0 +1,10 @@
+{
+  "arrowParens": "avoid",
+  "endOfLine": "auto",
+  "htmlWhitespaceSensitivity": "ignore",
+  "jsxSingleQuote": true,
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "vueIndentScriptAndStyle": true
+}

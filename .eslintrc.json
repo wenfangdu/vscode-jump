@@ -1,0 +1,19 @@
+{
+  "ignorePatterns": ["out", "dist", "**/*.d.ts"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "root": true,
+  "rules": {
+    "@typescript-eslint/naming-convention": "warn",
+    "curly": "warn",
+    "eqeqeq": "warn",
+    "no-throw-literal": "warn",
+    "no-var": "error",
+    "prefer-const": "error",
+    "require-await": "error"
+  }
+}
