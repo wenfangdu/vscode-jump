@@ -16,7 +16,7 @@ import { ExtensionComponent, Nullable } from './typings'
 
 const enum Command {
   Type = 'type',
-  Exit = 'jump.jump-exit',
+  Exit = 'jump.exit',
   Enter = 'jump.jump-to-the-start-of-a-word',
   EnterEOW = 'jump.jump-to-the-end-of-a-word',
   EnterSelect = 'jump.select-to-the-start-of-a-word',

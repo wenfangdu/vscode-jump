@@ -162,11 +162,11 @@ export class Settings implements ExtensionComponent {
     const userWordRegexFlags =
       jumpConfig[Setting.WordRegexpFlags] || DEFAULT_REGEX_FLAGS
 
-    if (userWordRegex && userWordRegex.length > 0) {
+    if (userWordRegex?.length) {
       this.wordRegexp = new RegExp(userWordRegex, userWordRegexFlags)
     }
 
-    if (userEndOfWordRegex && userEndOfWordRegex.length > 0) {
+    if (userEndOfWordRegex?.length) {
       this.endOfWordRegexp = new RegExp(userEndOfWordRegex, userWordRegexFlags)
     }
   }

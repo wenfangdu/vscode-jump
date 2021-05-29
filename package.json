@@ -1,8 +1,14 @@
 {
   "name": "jump",
   "displayName": "Jump",
-  "description": "Jump",
-  "version": "0.0.1",
+  "description": "Jump/Select to the Start/End of a word",
+  "version": "0.1.3",
+  "publisher": "wenfangdu",
+  "icon": "images/icon.jpg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wenfangdu/vscode-jump"
+  },
   "engines": {
     "vscode": "^1.56.0"
   },
@@ -14,30 +20,30 @@
     "onCommand:jump.jump-to-the-end-of-a-word",
     "onCommand:jump.select-to-the-start-of-a-word",
     "onCommand:jump.select-to-the-end-of-a-word",
-    "onCommand:jump.jump-exit"
+    "onCommand:jump.exit"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "jump.jump-to-the-start-of-a-word",
-        "title": "Jump to the start of a word"
+        "title": "Jump to the Start of a word"
       },
       {
         "command": "jump.jump-to-the-end-of-a-word",
-        "title": "Jump to the end of a word"
+        "title": "Jump to the End of a word"
       },
       {
         "command": "jump.select-to-the-start-of-a-word",
-        "title": "Select to the start of a word"
+        "title": "Select to the Start of a word"
       },
       {
         "command": "jump.select-to-the-end-of-a-word",
-        "title": "Select to the end of a word"
+        "title": "Select to the End of a word"
       },
       {
-        "command": "jump.jump-exit",
-        "title": "Jump exit"
+        "command": "jump.exit",
+        "title": "Exit jump mode"
       }
     ],
     "keybindings": [
@@ -63,12 +69,12 @@
       },
       {
         "key": "space",
-        "command": "jump.jump-exit",
+        "command": "jump.exit",
         "when": "editorTextFocus && jump.isInJumpMode"
       },
       {
         "key": "escape",
-        "command": "jump.jump-exit",
+        "command": "jump.exit",
         "when": "editorTextFocus && jump.isInJumpMode"
       }
     ],
