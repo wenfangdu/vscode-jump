@@ -1,7 +1,7 @@
 {
   "name": "jump",
-  "displayName": "Jump Word End",
-  "description": "Jump to the end of a word",
+  "displayName": "Jump",
+  "description": "Jump",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.56.0"
@@ -10,16 +10,94 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:jump.helloWorld"
+    "onCommand:jump.jump-to-the-start-of-a-word",
+    "onCommand:jump.jump-to-the-end-of-a-word",
+    "onCommand:jump.select-to-the-start-of-a-word",
+    "onCommand:jump.select-to-the-end-of-a-word",
+    "onCommand:jump.jump-exit"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "jump.helloWorld",
-        "title": "Hello World"
+        "command": "jump.jump-to-the-start-of-a-word",
+        "title": "Jump to the start of a word"
+      },
+      {
+        "command": "jump.jump-to-the-end-of-a-word",
+        "title": "Jump to the end of a word"
+      },
+      {
+        "command": "jump.select-to-the-start-of-a-word",
+        "title": "Select to the start of a word"
+      },
+      {
+        "command": "jump.select-to-the-end-of-a-word",
+        "title": "Select to the end of a word"
+      },
+      {
+        "command": "jump.jump-exit",
+        "title": "Jump exit"
       }
-    ]
+    ],
+    "keybindings": [
+      {
+        "key": "alt+q q",
+        "command": "jump.jump-to-the-start-of-a-word",
+        "when": "editorTextFocus && !jump.isInJumpMode"
+      },
+      {
+        "key": "alt+q w",
+        "command": "jump.jump-to-the-end-of-a-word",
+        "when": "editorTextFocus && !jump.isInJumpMode"
+      },
+      {
+        "key": "alt+q e",
+        "command": "jump.select-to-the-start-of-a-word",
+        "when": "editorTextFocus && !jump.isInJumpMode"
+      },
+      {
+        "key": "alt+q r",
+        "command": "jump.select-to-the-end-of-a-word",
+        "when": "editorTextFocus && !jump.isInJumpMode"
+      },
+      {
+        "key": "space",
+        "command": "jump.jump-exit",
+        "when": "editorTextFocus && jump.isInJumpMode"
+      },
+      {
+        "key": "escape",
+        "command": "jump.jump-exit",
+        "when": "editorTextFocus && jump.isInJumpMode"
+      }
+    ],
+    "configuration": {
+      "title": "Jump",
+      "properties": {
+        "jump.primaryCharset": {
+          "type": "string",
+          "pattern": "[a-z0-9]",
+          "default": "abcdefghigklmnopqrstuvwxyz",
+          "description": "Set of characters used to create jump key combinations. First letters will occur the closest to the current active line."
+        },
+        "jump.useIcons": {
+          "type": "boolean",
+          "default": true,
+          "description": "Defines whether markers should be rendered as flowing icons or prepending text."
+        },
+        "jump.display.backgroundColor": {
+          "type": "string",
+          "default": "#004455",
+          "description": "Background of decoration."
+        },
+        "jump.display.color": {
+          "type": "string",
+          "default": "#0af0c1",
+          "description": "Text color of decoration."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
