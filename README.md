@@ -3,11 +3,11 @@
 [![Version](https://vsmarketplacebadge.apphb.com/version-short/wenfangdu.jump.svg)](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
 [![Rating](https://vsmarketplacebadge.apphb.com/rating-star/wenfangdu.jump.svg)](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
 
-> _Jump/Select to the Start/End of a word_
+✨ Jump/Select to the Start/End of a word ✨
 
-[**Install Via Marketplace**](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
+[✨ Install Via Marketplace ✨](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
 
-**Commands**:
+## Commands
 
 - `Jump to the Start of a word`
 - `Jump to the End of a word`
@@ -15,7 +15,7 @@
 - `Select to the End of a word`
 - `Exit jump mode`
 
-**Demos**:
+## Demos
 
 - `Jump to the Start of a word`
 
@@ -37,6 +37,6 @@
 
   ![Exit jump mode](./images/exit-jump-mode.gif)
 
-**Credits**
+## Credits
 
-This extension is based on [Brad Bit](https://github.com/krnik)'s [fork](https://github.com/krnik/vscode-jumpy) of [Jumpy](https://github.com/wmaurer/vscode-jumpy), huge thanks to the creators!
+This extension is based on [Brad Bit](https://github.com/krnik)'s [fork](https://github.com/krnik/vscode-jumpy) of [Jumpy](https://github.com/wmaurer/vscode-jumpy), a huge thanks to the creators!

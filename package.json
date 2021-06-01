@@ -2,7 +2,7 @@
   "name": "jump",
   "displayName": "Jump",
   "description": "Jump/Select to the Start/End of a word",
-  "version": "0.1.3",
+  "version": "0.1.8",
   "publisher": "wenfangdu",
   "icon": "images/icon.jpg",
   "repository": {
@@ -48,24 +48,9 @@
     ],
     "keybindings": [
       {
-        "key": "alt+q q",
-        "command": "jump.jump-to-the-start-of-a-word",
-        "when": "editorTextFocus && !jump.isInJumpMode"
-      },
-      {
-        "key": "alt+q w",
-        "command": "jump.jump-to-the-end-of-a-word",
-        "when": "editorTextFocus && !jump.isInJumpMode"
-      },
-      {
-        "key": "alt+q e",
-        "command": "jump.select-to-the-start-of-a-word",
-        "when": "editorTextFocus && !jump.isInJumpMode"
-      },
-      {
-        "key": "alt+q r",
-        "command": "jump.select-to-the-end-of-a-word",
-        "when": "editorTextFocus && !jump.isInJumpMode"
+        "key": "escape",
+        "command": "jump.exit",
+        "when": "editorTextFocus && jump.isInJumpMode"
       },
       {
         "key": "space",
@@ -73,7 +58,7 @@
         "when": "editorTextFocus && jump.isInJumpMode"
       },
       {
-        "key": "escape",
+        "key": "enter",
         "command": "jump.exit",
         "when": "editorTextFocus && jump.isInJumpMode"
       }
