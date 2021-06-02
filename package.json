@@ -2,7 +2,7 @@
   "name": "jump",
   "displayName": "Jump",
   "description": "Jump/Select to the Start/End of a word",
-  "version": "0.1.8",
+  "version": "0.1.10",
   "publisher": "wenfangdu",
   "icon": "images/icon.jpg",
   "repository": {

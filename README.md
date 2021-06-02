@@ -3,7 +3,7 @@
 [![Version](https://vsmarketplacebadge.apphb.com/version-short/wenfangdu.jump.svg)](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
 [![Rating](https://vsmarketplacebadge.apphb.com/rating-star/wenfangdu.jump.svg)](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
 
-✨ Jump/Select to the Start/End of a word ✨
+> Jump/Select to the Start/End of a word
 
 [✨ Install Via Marketplace ✨](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
 
