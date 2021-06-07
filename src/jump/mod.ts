@@ -85,7 +85,7 @@ function withDelay(
   descriptor: TypedPropertyDescriptor<() => void>,
 ): void {
   let timeoutId: NodeJS.Timeout | null = null
-  const value = descriptor.value
+  const { value } = descriptor
 
   if (typeof value !== 'function') {
     return
@@ -257,7 +257,7 @@ export class Jump implements ExtensionComponent {
     }
 
     this.setDecorations(this.state.editor, NO_DECORATIONS)
-    this.state = Object.assign({}, DEFAULT_STATE)
+    this.state = { ...DEFAULT_STATE }
 
     this.tryDispose(Command.Type)
     this.setJumpContext(false)
@@ -284,7 +284,7 @@ export class Jump implements ExtensionComponent {
     }
 
     if (this.state.expandSelection) {
-      const anchor = this.state.editor.selection.anchor
+      const { anchor } = this.state.editor.selection
       const active = new Position(position.line, position.char)
       this.state.editor.selection = new Selection(anchor, active)
     } else {
@@ -350,7 +350,7 @@ export class Jump implements ExtensionComponent {
           char: match.index,
         }
 
-        const line = position.line
+        const { line } = position
         const char = position.char + this.settings.charOffset
 
         this.positions[code] = position
