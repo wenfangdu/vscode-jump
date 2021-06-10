@@ -2,7 +2,7 @@
   "name": "jump",
   "displayName": "Jump",
   "description": "Jump/Select to the Start/End of a word",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "publisher": "wenfangdu",
   "icon": "images/icon.jpg",
   "repository": {
@@ -10,7 +10,7 @@
     "url": "https://github.com/wenfangdu/vscode-jump"
   },
   "engines": {
-    "vscode": "^1.56.0"
+    "vscode": "^1.50.0"
   },
   "categories": [
     "Other"
@@ -102,7 +102,7 @@
     "@types/glob": "^7.1.3",
     "@types/mocha": "^8.0.4",
     "@types/node": "^12.11.7",
-    "@types/vscode": "^1.56.0",
+    "@types/vscode": "^1.50.0",
     "@typescript-eslint/eslint-plugin": "^4.14.1",
     "@typescript-eslint/parser": "^4.14.1",
     "eslint": "^7.19.0",
