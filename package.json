@@ -2,7 +2,7 @@
   "name": "jump",
   "displayName": "Jump",
   "description": "🏃‍♂️ Jump/Select to the Start/End of a word in VSCode",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "publisher": "wenfangdu",
   "icon": "images/icon.jpg",
   "license": "MIT",
@@ -87,11 +87,6 @@
           "pattern": "[a-z0-9]",
           "default": "abcdefghigklmnopqrstuvwxyz",
           "description": "Set of characters used to create jump key combinations. First letters will occur the closest to the current active line."
-        },
-        "jump.useIcons": {
-          "type": "boolean",
-          "default": true,
-          "description": "Defines whether markers should be rendered as flowing icons or prepending text."
         },
         "jump.display.backgroundColor": {
           "type": "string",

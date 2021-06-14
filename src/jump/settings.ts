@@ -46,6 +46,7 @@ interface DecorationOptions {
 const DEFAULT_REGEX_FLAGS = 'gi'
 const DEFAULT_JUMP_REGEXP = /\w{2,}/g
 const DEFAUlT_JUMP_REGEXP_EOW = /(?<=\w{2})(\b|-|\s)/gi
+const DEFAULT_USE_ICONS = true
 
 const DATA_URI = Uri.parse('data:')
 
@@ -110,7 +111,8 @@ export class Settings implements ExtensionComponent {
       SettingNamespace.Editor,
       null,
     )
-    const useIcons = Boolean(jumpConfig.get<boolean>(Setting.UseIcons))
+    const useIcons =
+      Boolean(jumpConfig.get<boolean>(Setting.UseIcons)) || DEFAULT_USE_ICONS
 
     this.charOffset = useIcons ? 2 : 0
 
@@ -183,7 +185,8 @@ export class Settings implements ExtensionComponent {
 
   private buildCodeOptions(): void {
     const settings = workspace.getConfiguration(SettingNamespace.Jump)
-    const useIcons = Boolean(settings.get<boolean>(Setting.UseIcons))
+    const useIcons =
+      Boolean(settings.get<boolean>(Setting.UseIcons)) || DEFAULT_USE_ICONS
     const [codePrefix, codeSuffix] = useIcons
       ? this.createCodeAffixes()
       : ['', '']
