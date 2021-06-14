@@ -1,12 +1,12 @@
 # Jump
 
 [![Version](https://vsmarketplacebadge.apphb.com/version-short/wenfangdu.jump.svg)](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
-[![Rating](https://vsmarketplacebadge.apphb.com/rating-star/wenfangdu.jump.svg)](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
 [![License](https://img.shields.io/github/license/wenfangdu/vscode-jump?color=brightgreen)](https://github.com/wenfangdu/vscode-jump/blob/main/LICENSE)
+[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dwenfangdu.jump)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dwenfangdu.jump)
 
-> Jump/Select to the Start/End of a word
+> 🏃‍♂️ Jump/Select to the Start/End of a word in VSCode
 
-[✨ Install Via Marketplace ✨](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
+[💿 Install Via Marketplace](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
 
 ## Commands
 
