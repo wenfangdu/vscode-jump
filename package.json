@@ -2,7 +2,7 @@
   "name": "jump",
   "displayName": "Jump",
   "description": "🏃‍♂️ Jump/Select to the Start/End of a word in VSCode",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "publisher": "wenfangdu",
   "icon": "images/icon.jpg",
   "license": "MIT",
@@ -92,11 +92,11 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
+    "vscode:prepublish": "npm run lint && npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts --fix",
+    "lint": "cross-env NODE_ENV=production eslint src --ext ts --fix",
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
@@ -106,6 +106,7 @@
     "@types/vscode": "^1.50.0",
     "@typescript-eslint/eslint-plugin": "^4.14.1",
     "@typescript-eslint/parser": "^4.14.1",
+    "cross-env": "^7.0.3",
     "eslint": "^7.28.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
