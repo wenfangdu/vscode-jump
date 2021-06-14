@@ -80,7 +80,7 @@ const DEFAULT_STATE: State = {
 const TYPE_REGEX = /\w/
 
 function withDelay(
-  _proto: object,
+  _proto: Record<string, any>,
   _key: string | symbol,
   descriptor: TypedPropertyDescriptor<() => void>,
 ): void {
