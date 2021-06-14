@@ -2,9 +2,10 @@
   "name": "jump",
   "displayName": "Jump",
   "description": "Jump/Select to the Start/End of a word",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "publisher": "wenfangdu",
   "icon": "images/icon.jpg",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/wenfangdu/vscode-jump"

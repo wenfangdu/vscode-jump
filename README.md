@@ -2,6 +2,7 @@
 
 [![Version](https://vsmarketplacebadge.apphb.com/version-short/wenfangdu.jump.svg)](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
 [![Rating](https://vsmarketplacebadge.apphb.com/rating-star/wenfangdu.jump.svg)](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
+[![License](https://img.shields.io/github/license/wenfangdu/vscode-jump?color=brightgreen)](https://github.com/wenfangdu/vscode-jump/blob/main/LICENSE)
 
 > Jump/Select to the Start/End of a word
 
