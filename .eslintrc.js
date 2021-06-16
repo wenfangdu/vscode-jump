@@ -26,9 +26,10 @@ module.exports = {
       },
     ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-unused-vars': [
-      'warn',
+      production ? 'error' : 'warn',
       {
         argsIgnorePattern: '^_',
         ignoreRestSiblings: true,
@@ -37,6 +38,14 @@ module.exports = {
     'arrow-body-style': 'error',
     curly: 'error',
     eqeqeq: 'error',
+    'import/extensions': [
+      'error',
+      'always',
+      {
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
     'import/no-relative-parent-imports': 'error',
@@ -71,7 +80,12 @@ module.exports = {
     'object-shorthand': 'error',
     'one-var': ['error', 'never'],
     'prefer-arrow-callback': 'error',
-    'prefer-const': 'error',
+    'prefer-const': [
+      'error',
+      {
+        destructuring: 'all',
+      },
+    ],
     'prefer-destructuring': [
       'error',
       {
@@ -90,5 +104,12 @@ module.exports = {
     'prefer-object-spread': 'error',
     'prefer-template': 'error',
     'require-await': production ? 'error' : 'warn',
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.ts', '.tsx'],
+      },
+    },
   },
 }
