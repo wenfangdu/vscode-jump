@@ -40,4 +40,4 @@
 
 ## Credits
 
-This extension is based on [Brad Bit](https://github.com/krnik)'s [fork](https://github.com/krnik/vscode-jumpy) of [Jumpy](https://github.com/wmaurer/vscode-jumpy), a huge thanks to the creators!
+This extension is based on [Brad Bit's fork](https://github.com/krnik/vscode-jumpy) of [Jumpy](https://github.com/wmaurer/vscode-jumpy), a huge thanks to the creators!
