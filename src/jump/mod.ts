@@ -10,7 +10,7 @@ import {
   window,
   workspace,
 } from 'vscode'
-import { getVisibleLines } from './get_lines'
+import { getVisibleLines } from './get-lines'
 import { Settings } from './settings'
 import { ExtensionComponent, Nullable } from './typings'
 
@@ -233,6 +233,17 @@ export class Jump implements ExtensionComponent {
     matchStartOfWord = true,
     expandSelection = false,
   ): void => {
+    if (this.state.isInJumpMode) {
+      if (
+        this.state.matchStartOfWord === matchStartOfWord &&
+        this.state.expandSelection === expandSelection
+      ) {
+        return this.handleExitJumpMode()
+      } else {
+        this.handleExitJumpMode()
+      }
+    }
+
     const activeEditor = window.activeTextEditor
     if (activeEditor === undefined) {
       return

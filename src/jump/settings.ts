@@ -8,7 +8,7 @@ import {
   window,
   workspace,
 } from 'vscode'
-import { createCharCodeSet } from './char_code'
+import { createCharCodeSet } from './char-codes'
 import { ExtensionComponent } from './typings'
 
 export const enum SettingNamespace {
