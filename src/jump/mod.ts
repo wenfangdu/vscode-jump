@@ -79,41 +79,12 @@ const DEFAULT_STATE: State = {
 }
 const TYPE_REGEX = /\w/
 
-function withDelay(
-  _proto: Record<string, any>,
-  _key: string | symbol,
-  descriptor: TypedPropertyDescriptor<() => void>,
-): void {
-  let timeoutId: NodeJS.Timeout | null = null
-  const { value } = descriptor
-
-  if (typeof value !== 'function') {
-    return
-  }
-
-  descriptor.value = function decorated(
-    this: Jump,
-    forceInvocation = true,
-  ): void {
-    if (timeoutId) {
-      clearTimeout(timeoutId)
-    }
-    if (forceInvocation) {
-      timeoutId = null
-      return value.call(this)
-    }
-    timeoutId = setTimeout((): void => {
-      timeoutId = null
-      value.call(this)
-    }, 300)
-  }
-}
-
 export class Jump implements ExtensionComponent {
   private handles: Record<Command | Event, Nullable<Disposable>>
   private settings: Settings
   private positions: JumpPositionMap
   private state: State
+  private timeout?: NodeJS.Timeout
 
   public constructor() {
     this.state = {
@@ -196,7 +167,9 @@ export class Jump implements ExtensionComponent {
       return
     }
 
-    this.showDecorations(false)
+    this.timeout && clearTimeout(this.timeout)
+
+    this.timeout = setTimeout(() => this.showDecorations(), 300)
   }
 
   private handleSelectionChange = (): void => {
@@ -332,8 +305,7 @@ export class Jump implements ExtensionComponent {
     }
   }
 
-  @withDelay
-  private showDecorations(_forceInvocation = true): void {
+  private showDecorations(): void {
     const editor = this.state.editor || null
     const lines = editor && getVisibleLines(editor)
 
