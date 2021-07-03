@@ -2,7 +2,7 @@
   "name": "jump",
   "displayName": "Jump",
   "description": "🏃‍♂️ Jump/Select to the Start/End of a word in VSCode",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "publisher": "wenfangdu",
   "icon": "images/icon.png",
   "license": "MIT",
@@ -66,17 +66,17 @@
       {
         "key": "escape",
         "command": "jump.exit",
-        "when": "editorTextFocus && jump.isInJumpMode"
+        "when": "jump.isInJumpMode"
       },
       {
         "key": "space",
         "command": "jump.exit",
-        "when": "editorTextFocus && jump.isInJumpMode"
+        "when": "jump.isInJumpMode"
       },
       {
         "key": "enter",
         "command": "jump.exit",
-        "when": "editorTextFocus && jump.isInJumpMode"
+        "when": "jump.isInJumpMode"
       }
     ],
     "configuration": {
