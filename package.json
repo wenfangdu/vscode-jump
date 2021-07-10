@@ -2,7 +2,7 @@
   "name": "jump",
   "displayName": "Jump",
   "description": "🏃‍♂️ Jump/Select to the Start/End of a word in VSCode",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "publisher": "wenfangdu",
   "icon": "images/icon.png",
   "license": "MIT",
@@ -94,17 +94,17 @@
       {
         "key": "escape",
         "command": "jump.exit",
-        "when": "jump.isInJumpMode"
+        "when": "jump.isInJumpMode && editorTextFocus"
       },
       {
         "key": "space",
         "command": "jump.exit",
-        "when": "jump.isInJumpMode"
+        "when": "jump.isInJumpMode && editorTextFocus"
       },
       {
         "key": "enter",
         "command": "jump.exit",
-        "when": "jump.isInJumpMode"
+        "when": "jump.isInJumpMode && editorTextFocus"
       }
     ],
     "configuration": {
@@ -130,7 +130,7 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run lint && npm run compile",
+    "vscode:prepublish": "npm install && npm run lint && npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
