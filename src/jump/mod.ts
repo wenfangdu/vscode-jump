@@ -202,10 +202,10 @@ export class Jump implements ExtensionComponent {
     }
   }
 
-  private handleEnterJumpMode = async (
+  private handleEnterJumpMode = (
     matchStartOfWord = true,
     expandSelection = false,
-  ) => {
+  ): void => {
     if (this.state.isInJumpMode) {
       if (
         this.state.matchStartOfWord === matchStartOfWord &&
@@ -231,11 +231,6 @@ export class Jump implements ExtensionComponent {
     this.state.matchStartOfWord = matchStartOfWord
     this.state.expandSelection = expandSelection
     this.state.editor = activeEditor
-
-    await Promise.all([
-      commands.executeCommand('settings.action.focusSettingsFile'),
-      commands.executeCommand('workbench.action.focusActiveEditorGroup'),
-    ])
 
     this.showDecorations()
   }

@@ -2,7 +2,7 @@
   "name": "jump",
   "displayName": "Jump",
   "description": "🏃‍♂️ Jump/Select to the Start/End of a word in VSCode",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "publisher": "wenfangdu",
   "icon": "images/icon.png",
   "license": "MIT",
@@ -92,19 +92,39 @@
     ],
     "keybindings": [
       {
+        "key": "alt+q q",
+        "command": "jump.jump-to-the-start-of-a-word",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "alt+q w",
+        "command": "jump.jump-to-the-end-of-a-word",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "alt+q e",
+        "command": "jump.select-to-the-start-of-a-word",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "alt+q r",
+        "command": "jump.select-to-the-end-of-a-word",
+        "when": "editorTextFocus"
+      },
+      {
         "key": "escape",
         "command": "jump.exit",
-        "when": "jump.isInJumpMode && editorTextFocus"
+        "when": "editorTextFocus && jump.isInJumpMode"
       },
       {
         "key": "space",
         "command": "jump.exit",
-        "when": "jump.isInJumpMode && editorTextFocus"
+        "when": "editorTextFocus && jump.isInJumpMode"
       },
       {
         "key": "enter",
         "command": "jump.exit",
-        "when": "jump.isInJumpMode && editorTextFocus"
+        "when": "editorTextFocus && jump.isInJumpMode"
       }
     ],
     "configuration": {
