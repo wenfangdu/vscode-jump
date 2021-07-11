@@ -10,6 +10,18 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   ignorePatterns: ['out', 'dist', '**/*.d.ts'],
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      parserOptions: {
+        // this setting is required to use rules that require type information
+        project: './tsconfig.json',
+      },
+      rules: {
+        '@typescript-eslint/prefer-nullish-coalescing': 'error',
+      },
+    },
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 6,
@@ -33,6 +45,7 @@ module.exports = {
         ignoreRestSiblings: true,
       },
     ],
+    '@typescript-eslint/prefer-optional-chain': 'error',
     'arrow-body-style': 'error',
     curly: 'error',
     eqeqeq: 'error',

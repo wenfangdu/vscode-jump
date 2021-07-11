@@ -301,7 +301,7 @@ export class Jump implements ExtensionComponent {
   }
 
   private showDecorations(): void {
-    const editor = this.state.editor || null
+    const editor = this.state.editor ?? null
     const lines = editor && getVisibleLines(editor)
 
     if (!editor || lines === null) {

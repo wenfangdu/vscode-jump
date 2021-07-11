@@ -112,15 +112,15 @@ export class Settings implements ExtensionComponent {
       null,
     )
     const useIcons =
-      Boolean(jumpConfig.get<boolean>(Setting.UseIcons)) || DEFAULT_USE_ICONS
+      jumpConfig.get<boolean>(Setting.UseIcons) ?? DEFAULT_USE_ICONS
 
     this.charOffset = useIcons ? 2 : 0
 
     const fontFamily = editorConfig.get(Setting.FontFamily) as string
     const fontSize = editorConfig.get(Setting.FontSize) as number
-    const color = jumpConfig.get<string>(DisplaySetting.Color) || DEFAULT_COLOR
+    const color = jumpConfig.get<string>(DisplaySetting.Color) ?? DEFAULT_COLOR
     const backgroundColor =
-      jumpConfig.get<string>(DisplaySetting.BackgroundColor) ||
+      jumpConfig.get<string>(DisplaySetting.BackgroundColor) ??
       DEFAULT_BACKGROUND_COLOR
 
     const pad = 2 * Math.ceil(fontSize / (10 * 2))
@@ -162,7 +162,7 @@ export class Settings implements ExtensionComponent {
     const userWordRegex = jumpConfig[Setting.WordRegexp]
     const userEndOfWordRegex = jumpConfig[Setting.WordRegexpEndOfWord]
     const userWordRegexFlags =
-      jumpConfig[Setting.WordRegexpFlags] || DEFAULT_REGEX_FLAGS
+      jumpConfig[Setting.WordRegexpFlags] ?? DEFAULT_REGEX_FLAGS
 
     if (userWordRegex?.length) {
       this.wordRegexp = new RegExp(userWordRegex, userWordRegexFlags)
@@ -176,17 +176,16 @@ export class Settings implements ExtensionComponent {
   private buildCharset(): void {
     const jumpConfig = workspace.getConfiguration(SettingNamespace.Jump)
     const charsetSetting = jumpConfig.get<string>(Setting.PrimaryCharset)
-    const charset =
-      charsetSetting && charsetSetting.length
-        ? charsetSetting.toLowerCase().split('')
-        : undefined
+    const charset = charsetSetting?.length
+      ? charsetSetting.toLowerCase().split('')
+      : undefined
     this.codes = createCharCodeSet(charset)
   }
 
   private buildCodeOptions(): void {
     const settings = workspace.getConfiguration(SettingNamespace.Jump)
     const useIcons =
-      Boolean(settings.get<boolean>(Setting.UseIcons)) || DEFAULT_USE_ICONS
+      settings.get<boolean>(Setting.UseIcons) ?? DEFAULT_USE_ICONS
     const [codePrefix, codeSuffix] = useIcons
       ? this.createCodeAffixes()
       : ['', '']
