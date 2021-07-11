@@ -2,7 +2,7 @@
   "name": "jump",
   "displayName": "Jump",
   "description": "🏃‍♂️ Jump/Select to the Start/End of a word in VSCode",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "publisher": "wenfangdu",
   "icon": "images/icon.png",
   "license": "MIT",
@@ -132,7 +132,8 @@
       "properties": {
         "jump.primaryCharset": {
           "type": "string",
-          "pattern": "[a-z0-9]",
+          "pattern": "^(?:([a-z0-9])(?!.*\\1))+$",
+          "patternErrorMessage": "Please enter unique characters from [a-z0-9].",
           "default": "acdefijklmnopqrsvwxz",
           "description": "Set of characters used to create jump key combinations. First letters will occur the closest to the current active line."
         },
