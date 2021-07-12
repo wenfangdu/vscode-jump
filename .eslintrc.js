@@ -46,7 +46,6 @@ module.exports = {
       },
     ],
     '@typescript-eslint/prefer-optional-chain': 'error',
-    'arrow-body-style': 'error',
     curly: 'error',
     eqeqeq: 'error',
     'import/extensions': [
@@ -69,10 +68,11 @@ module.exports = {
         ]
       : 'off',
     'no-debugger': production ? 'error' : 'off',
-    'no-empty': 'error',
+    'no-empty': production ? 'error' : 'warn',
     'no-return-await': 'error',
     'no-throw-literal': 'error',
     'no-unneeded-ternary': 'error',
+    'no-unreachable': production ? 'error' : 'warn',
     'no-unused-expressions': [
       'error',
       {
