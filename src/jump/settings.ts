@@ -107,12 +107,8 @@ export class Settings implements ExtensionComponent {
 
   private buildDecorationType(): void {
     const jumpConfig = workspace.getConfiguration(SettingNamespace.Jump)
-    const editorConfig = workspace.getConfiguration(
-      SettingNamespace.Editor,
-      null,
-    )
-    const useIcons =
-      jumpConfig.get<boolean>(Setting.UseIcons) ?? DEFAULT_USE_ICONS
+    const editorConfig = workspace.getConfiguration(SettingNamespace.Editor, null)
+    const useIcons = jumpConfig.get<boolean>(Setting.UseIcons) ?? DEFAULT_USE_ICONS
 
     this.charOffset = useIcons ? 2 : 0
 
@@ -120,8 +116,7 @@ export class Settings implements ExtensionComponent {
     const fontSize = editorConfig.get(Setting.FontSize) as number
     const color = jumpConfig.get<string>(DisplaySetting.Color) ?? DEFAULT_COLOR
     const backgroundColor =
-      jumpConfig.get<string>(DisplaySetting.BackgroundColor) ??
-      DEFAULT_BACKGROUND_COLOR
+      jumpConfig.get<string>(DisplaySetting.BackgroundColor) ?? DEFAULT_BACKGROUND_COLOR
 
     const pad = 2 * Math.ceil(fontSize / (10 * 2))
     const width = fontSize + pad * 2
@@ -161,8 +156,7 @@ export class Settings implements ExtensionComponent {
     const jumpConfig = workspace.getConfiguration(SettingNamespace.Jump)
     const userWordRegex = jumpConfig[Setting.WordRegexp]
     const userEndOfWordRegex = jumpConfig[Setting.WordRegexpEndOfWord]
-    const userWordRegexFlags =
-      jumpConfig[Setting.WordRegexpFlags] ?? DEFAULT_REGEX_FLAGS
+    const userWordRegexFlags = jumpConfig[Setting.WordRegexpFlags] ?? DEFAULT_REGEX_FLAGS
 
     if (userWordRegex?.length) {
       this.wordRegexp = new RegExp(userWordRegex, userWordRegexFlags)
@@ -176,19 +170,14 @@ export class Settings implements ExtensionComponent {
   private buildCharset(): void {
     const jumpConfig = workspace.getConfiguration(SettingNamespace.Jump)
     const charsetSetting = jumpConfig.get<string>(Setting.PrimaryCharset)
-    const charset = charsetSetting?.length
-      ? charsetSetting.toLowerCase().split('')
-      : undefined
+    const charset = charsetSetting?.length ? charsetSetting.toLowerCase().split('') : undefined
     this.codes = createCharCodeSet(charset)
   }
 
   private buildCodeOptions(): void {
     const settings = workspace.getConfiguration(SettingNamespace.Jump)
-    const useIcons =
-      settings.get<boolean>(Setting.UseIcons) ?? DEFAULT_USE_ICONS
-    const [codePrefix, codeSuffix] = useIcons
-      ? this.createCodeAffixes()
-      : ['', '']
+    const useIcons = settings.get<boolean>(Setting.UseIcons) ?? DEFAULT_USE_ICONS
+    const [codePrefix, codeSuffix] = useIcons ? this.createCodeAffixes() : ['', '']
 
     for (const code of this.codes) {
       this.codeOptions.set(

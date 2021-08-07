@@ -41,11 +41,7 @@ const ALL_ALLOWED_CHARS = [
   '8',
 ]
 
-function combineElements(
-  arrA: string[],
-  arrB: string[],
-  callback: (s: string) => void,
-): void {
+function combineElements(arrA: string[], arrB: string[], callback: (s: string) => void): void {
   const results: { text: string; i: number; j: number; t: number }[] = []
 
   for (let i = 0; i < arrA.length; i++) {
@@ -72,15 +68,9 @@ function combineElements(
     .forEach(elem => callback(elem.text))
 }
 
-export function createCharCodeSet(
-  primaryCharacters = DEFAULT_PRIMARY_CHARS,
-): string[] {
-  const primaryChars = primaryCharacters.filter(char =>
-    ALL_ALLOWED_CHARS.includes(char),
-  )
-  const secondaryChars = ALL_ALLOWED_CHARS.filter(
-    char => !primaryChars.includes(char),
-  )
+export function createCharCodeSet(primaryCharacters = DEFAULT_PRIMARY_CHARS): string[] {
+  const primaryChars = primaryCharacters.filter(char => ALL_ALLOWED_CHARS.includes(char))
+  const secondaryChars = ALL_ALLOWED_CHARS.filter(char => !primaryChars.includes(char))
 
   const codeSet: string[] = []
   const callback = (str: string): void => {

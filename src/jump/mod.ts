@@ -116,31 +116,26 @@ export class Jump implements ExtensionComponent {
     this.handles[Command.Enter] = commands.registerCommand(Command.Enter, () =>
       this.handleEnterJumpMode(true, false),
     )
-    this.handles[Command.EnterEOW] = commands.registerCommand(
-      Command.EnterEOW,
-      () => this.handleEnterJumpMode(false, false),
+    this.handles[Command.EnterEOW] = commands.registerCommand(Command.EnterEOW, () =>
+      this.handleEnterJumpMode(false, false),
     )
-    this.handles[Command.Exit] = commands.registerCommand(
-      Command.Exit,
-      this.handleExitJumpMode,
+    this.handles[Command.Exit] = commands.registerCommand(Command.Exit, this.handleExitJumpMode)
+    this.handles[Command.EnterSelect] = commands.registerCommand(Command.EnterSelect, () =>
+      this.handleEnterJumpMode(true, true),
     )
-    this.handles[Command.EnterSelect] = commands.registerCommand(
-      Command.EnterSelect,
-      () => this.handleEnterJumpMode(true, true),
+    this.handles[Command.EntereSelectEOW] = commands.registerCommand(Command.EntereSelectEOW, () =>
+      this.handleEnterJumpMode(false, true),
     )
-    this.handles[Command.EntereSelectEOW] = commands.registerCommand(
-      Command.EntereSelectEOW,
-      () => this.handleEnterJumpMode(false, true),
+    this.handles[Event.ConfigChanged] = workspace.onDidChangeConfiguration(this.handleConfigChange)
+    this.handles[Event.ActiveSelectionChanged] = window.onDidChangeTextEditorSelection(
+      this.handleSelectionChange,
     )
-    this.handles[Event.ConfigChanged] = workspace.onDidChangeConfiguration(
-      this.handleConfigChange,
+    this.handles[Event.ActiveEditorChanged] = window.onDidChangeActiveTextEditor(
+      this.handleEditorChange,
     )
-    this.handles[Event.ActiveSelectionChanged] =
-      window.onDidChangeTextEditorSelection(this.handleSelectionChange)
-    this.handles[Event.ActiveEditorChanged] =
-      window.onDidChangeActiveTextEditor(this.handleEditorChange)
-    this.handles[Event.VisibleRangesChanged] =
-      window.onDidChangeTextEditorVisibleRanges(this.handleVisibleRangesChange)
+    this.handles[Event.VisibleRangesChanged] = window.onDidChangeTextEditorVisibleRanges(
+      this.handleVisibleRangesChange,
+    )
   }
 
   public deactivate(): void {
@@ -202,10 +197,7 @@ export class Jump implements ExtensionComponent {
     }
   }
 
-  private handleEnterJumpMode = (
-    matchStartOfWord = true,
-    expandSelection = false,
-  ): void => {
+  private handleEnterJumpMode = (matchStartOfWord = true, expandSelection = false): void => {
     if (this.state.isInJumpMode) {
       if (
         this.state.matchStartOfWord === matchStartOfWord &&
@@ -223,10 +215,7 @@ export class Jump implements ExtensionComponent {
     }
 
     this.setJumpContext(true)
-    this.handles[Command.Type] = commands.registerCommand(
-      Command.Type,
-      this.handleTypeEvent,
-    )
+    this.handles[Command.Type] = commands.registerCommand(Command.Type, this.handleTypeEvent)
 
     this.state.matchStartOfWord = matchStartOfWord
     this.state.expandSelection = expandSelection
@@ -288,15 +277,9 @@ export class Jump implements ExtensionComponent {
     this.state.isInJumpMode = value
   }
 
-  private setDecorations(
-    editor: TextEditor,
-    decorationInstanceOptions: DecorationOptions[],
-  ): void {
+  private setDecorations(editor: TextEditor, decorationInstanceOptions: DecorationOptions[]): void {
     if (editor !== undefined) {
-      editor.setDecorations(
-        this.settings.decorationType,
-        decorationInstanceOptions,
-      )
+      editor.setDecorations(this.settings.decorationType, decorationInstanceOptions)
     }
   }
 
