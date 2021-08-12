@@ -115,8 +115,8 @@ export class Settings implements ExtensionComponent {
     const fontFamily = editorConfig.get(Setting.FontFamily) as string
     const fontSize = editorConfig.get(Setting.FontSize) as number
     const color = jumpConfig.get<string>(DisplaySetting.Color) ?? DEFAULT_COLOR
-    const backgroundColor =
-      jumpConfig.get<string>(DisplaySetting.BackgroundColor) ?? DEFAULT_BACKGROUND_COLOR
+    // prettier-ignore
+    const backgroundColor = jumpConfig.get<string>(DisplaySetting.BackgroundColor) ?? DEFAULT_BACKGROUND_COLOR
 
     const pad = 2 * Math.ceil(fontSize / (10 * 2))
     const width = fontSize + pad * 2
@@ -209,8 +209,8 @@ export class Settings implements ExtensionComponent {
   }
 
   private createCodeAffixes(): [string, string] {
-    const { pad, fontSize, backgroundColor, fontFamily, color, width, height } =
-      this.decorationOptions
+    // prettier-ignore
+    const { pad, fontSize, backgroundColor, fontFamily, color, width, height } = this.decorationOptions
     const halfOfPad = pad >> 1
 
     return [

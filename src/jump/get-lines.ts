@@ -14,8 +14,8 @@ export function getVisibleLines(editor: TextEditor): null | TextLine[] {
   }
 
   const cursorLineIndex = visibleLineNumbers.indexOf(selection.start.line)
-  const startLineIndex =
-    cursorLineIndex === -1 ? Math.floor(visibleLineNumbers.length / 2) : cursorLineIndex
+  // prettier-ignore
+  const startLineIndex = cursorLineIndex === -1 ? Math.floor(visibleLineNumbers.length / 2) : cursorLineIndex
 
   let leftIndex = startLineIndex - 1
   let rightIndex = startLineIndex + 1
