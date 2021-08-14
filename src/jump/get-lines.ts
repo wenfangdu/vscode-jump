@@ -2,18 +2,18 @@ import { TextEditor, TextLine } from 'vscode'
 
 export function getVisibleLines(editor: TextEditor): null | TextLine[] {
   const { document } = editor
-  const { visibleRanges, selection } = editor
+  const { visibleRanges, selections } = editor
 
   const visibleLineNumbers = []
   for (const range of visibleRanges) {
     let lineNumber = range.start.line
     while (lineNumber <= range.end.line) {
       visibleLineNumbers.push(lineNumber)
-      lineNumber += 1
+      ++lineNumber
     }
   }
 
-  const cursorLineIndex = visibleLineNumbers.indexOf(selection.start.line)
+  const cursorLineIndex = visibleLineNumbers.indexOf(selections.slice(-1)[0].active.line)
   // prettier-ignore
   const startLineIndex = cursorLineIndex === -1 ? Math.floor(visibleLineNumbers.length / 2) : cursorLineIndex
 

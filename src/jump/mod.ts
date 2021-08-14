@@ -257,7 +257,7 @@ export class Jump implements ExtensionComponent {
     }
 
     if (this.state.expandSelection) {
-      const { anchor } = this.state.editor.selection
+      const [{ anchor }] = this.state.editor.selections.slice(-1)
       const active = new Position(position.line, position.char)
       this.state.editor.selection = new Selection(anchor, active)
     } else {
@@ -301,8 +301,20 @@ export class Jump implements ExtensionComponent {
     const linesCount = lines.length
     const maxDecorations = this.settings.codes.length
 
-    for (let i = 0; i < linesCount && positionCount < maxDecorations; i++) {
-      for (const match of lines[i].text.matchAll(scanRegexp)) {
+    for (let i = 0; i < linesCount && positionCount < maxDecorations; ++i) {
+      const matches = [...lines[i].text.matchAll(scanRegexp)]
+
+      const [{ active }] = editor.selections.slice(-1)
+
+      if (lines[i].lineNumber === active.line) {
+        matches.sort(
+          (a, b) =>
+            Math.abs(active.character - (a.index ?? Infinity)) -
+            Math.abs(active.character - (b.index ?? Infinity)),
+        )
+      }
+
+      for (const match of matches) {
         if (positionCount >= maxDecorations) {
           break
         }
@@ -325,7 +337,7 @@ export class Jump implements ExtensionComponent {
           renderOptions: this.settings.getOptions(code),
         })
 
-        positionCount += 1
+        ++positionCount
       }
     }
 

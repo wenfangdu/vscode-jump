@@ -44,8 +44,8 @@ const ALL_ALLOWED_CHARS = [
 function combineElements(arrA: string[], arrB: string[], callback: (s: string) => void): void {
   const results: { text: string; i: number; j: number; t: number }[] = []
 
-  for (let i = 0; i < arrA.length; i++) {
-    for (let j = 0; j < arrB.length; j++) {
+  for (let i = 0; i < arrA.length; ++i) {
+    for (let j = 0; j < arrB.length; ++j) {
       results.push({
         i,
         j,
