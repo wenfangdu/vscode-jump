@@ -24,6 +24,7 @@ const enum Setting {
   PrimaryCharset = 'primaryCharset',
   FontFamily = 'fontFamily',
   FontSize = 'fontSize',
+  CursorSurroundingLines = 'cursorSurroundingLines',
 }
 
 const enum DisplaySetting {
@@ -61,6 +62,7 @@ export class Settings implements ExtensionComponent {
   public wordRegexp: RegExp
   public endOfWordRegexp: RegExp
   public charOffset: number
+  public cursorSurroundingLines: number
 
   public constructor() {
     this.decorationOptions = {} as unknown as DecorationOptions
@@ -70,6 +72,7 @@ export class Settings implements ExtensionComponent {
     this.wordRegexp = DEFAULT_JUMP_REGEXP
     this.endOfWordRegexp = DEFAUlT_JUMP_REGEXP_EOW
     this.charOffset = 0
+    this.cursorSurroundingLines = 0
   }
 
   public activate(): void {
@@ -107,7 +110,7 @@ export class Settings implements ExtensionComponent {
 
   private buildDecorationType(): void {
     const jumpConfig = workspace.getConfiguration(SettingNamespace.Jump)
-    const editorConfig = workspace.getConfiguration(SettingNamespace.Editor, null)
+    const editorConfig = workspace.getConfiguration(SettingNamespace.Editor)
     const useIcons = jumpConfig.get<boolean>(Setting.UseIcons) ?? DEFAULT_USE_ICONS
 
     this.charOffset = useIcons ? 2 : 0
@@ -150,6 +153,8 @@ export class Settings implements ExtensionComponent {
     this.decorationType = window.createTextEditorDecorationType({
       after: decorationTypeOptions,
     })
+
+    this.cursorSurroundingLines = editorConfig.get(Setting.CursorSurroundingLines) as number
   }
 
   private buildWordRegexp(): void {

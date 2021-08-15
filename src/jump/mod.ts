@@ -260,6 +260,11 @@ export class Jump implements ExtensionComponent {
       const [{ anchor }] = this.state.editor.selections.slice(-1)
       const active = new Position(position.line, position.char)
       this.state.editor.selection = new Selection(anchor, active)
+
+      if (this.settings.cursorSurroundingLines) {
+        commands.executeCommand('cursorLeftSelect')
+        commands.executeCommand('cursorRightSelect')
+      }
     } else {
       this.state.editor.selection = new Selection(
         position.line,
@@ -267,6 +272,11 @@ export class Jump implements ExtensionComponent {
         position.line,
         position.char,
       )
+
+      if (this.settings.cursorSurroundingLines) {
+        commands.executeCommand('cursorLeft')
+        commands.executeCommand('cursorRight')
+      }
     }
 
     this.handleExitJumpMode()
@@ -278,9 +288,7 @@ export class Jump implements ExtensionComponent {
   }
 
   private setDecorations(editor: TextEditor, decorationInstanceOptions: DecorationOptions[]): void {
-    if (editor !== undefined) {
-      editor.setDecorations(this.settings.decorationType, decorationInstanceOptions)
-    }
+    editor.setDecorations(this.settings.decorationType, decorationInstanceOptions)
   }
 
   private showDecorations(): void {
