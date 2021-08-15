@@ -20,24 +20,20 @@
 
 - `Jump to the Start of a word`
 
-  ![Jump to the Start of a word](./images/jump-to-the-start-of-a-word.gif)
+  ![Jump to the Start of a word](https://raw.githubusercontent.com/wenfangdu/vscode-jump/main/images/jump-to-the-start-of-a-word.gif)
 
 - `Jump to the End of a word`
 
-  ![Jump to the End of a word](./images/jump-to-the-end-of-a-word.gif)
+  ![Jump to the End of a word](https://raw.githubusercontent.com/wenfangdu/vscode-jump/main/images/jump-to-the-end-of-a-word.gif)
 
 - `Select to the Start of a word`
 
-  ![Select to the Start of a word](./images/select-to-the-start-of-a-word.gif)
+  ![Select to the Start of a word](https://raw.githubusercontent.com/wenfangdu/vscode-jump/main/images/select-to-the-start-of-a-word.gif)
 
 - `Select to the End of a word`
 
-  ![Select to the End of a word](./images/select-to-the-end-of-a-word.gif)
+  ![Select to the End of a word](https://raw.githubusercontent.com/wenfangdu/vscode-jump/main/images/select-to-the-end-of-a-word.gif)
 
 - `Exit jump mode`
 
-  ![Exit jump mode](./images/exit-jump-mode.gif)
-
-## Credits
-
-This extension is based on [Brad Bit's fork](https://github.com/krnik/vscode-jumpy) of [Jumpy](https://github.com/wmaurer/vscode-jumpy), a huge thanks to the creators!
+  ![Exit jump mode](https://raw.githubusercontent.com/wenfangdu/vscode-jump/main/images/exit-jump-mode.gif)
