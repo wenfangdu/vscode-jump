@@ -37,3 +37,8 @@
 - `Exit jump mode`
 
   ![Exit jump mode](https://raw.githubusercontent.com/wenfangdu/vscode-jump/main/images/exit-jump-mode.gif)
+
+## Inspired By
+
+- [Jumpy Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=wmaurer.vscode-jumpy)
+- [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
