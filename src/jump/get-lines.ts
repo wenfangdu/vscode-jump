@@ -8,8 +8,7 @@ export function getVisibleLines(editor: TextEditor): null | TextLine[] {
   for (const range of visibleRanges) {
     let lineNumber = range.start.line
     while (lineNumber <= range.end.line) {
-      visibleLineNumbers.push(lineNumber)
-      ++lineNumber
+      visibleLineNumbers.push(lineNumber++)
     }
   }
 

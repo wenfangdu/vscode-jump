@@ -114,6 +114,7 @@ module.exports = {
     'prefer-numeric-literals': 'error',
     'prefer-object-spread': 'error',
     'prefer-template': 'error',
+    'prettier/prettier': production ? 'error' : 'warn',
     'require-await': production ? 'error' : 'warn',
   },
   settings: {
