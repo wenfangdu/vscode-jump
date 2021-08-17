@@ -17,11 +17,11 @@ import { ExtensionComponent, Nullable } from './typings'
 const enum Command {
   Type = 'type',
   ReplacePreviousChar = 'replacePreviousChar',
-  Exit = 'jump.exit',
-  Enter = 'jump.jump-to-the-start-of-a-word',
-  EnterEOW = 'jump.jump-to-the-end-of-a-word',
-  EnterSelect = 'jump.select-to-the-start-of-a-word',
-  EntereSelectEOW = 'jump.select-to-the-end-of-a-word',
+  Exit = 'jump-extension.exit',
+  Enter = 'jump-extension.jump-to-the-start-of-a-word',
+  EnterEOW = 'jump-extension.jump-to-the-end-of-a-word',
+  EnterSelect = 'jump-extension.select-to-the-start-of-a-word',
+  EntereSelectEOW = 'jump-extension.select-to-the-end-of-a-word',
 }
 
 const enum Event {

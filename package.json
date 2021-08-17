@@ -2,7 +2,7 @@
   "name": "jump",
   "displayName": "Jump",
   "description": "🏃‍♂️ Jump/Select to the Start/End of a word in VSCode",
-  "version": "0.6.5",
+  "version": "0.7.0",
   "publisher": "wenfangdu",
   "icon": "images/icon.png",
   "license": "MIT",
@@ -48,70 +48,70 @@
     "word"
   ],
   "activationEvents": [
-    "onCommand:jump.jump-to-the-start-of-a-word",
-    "onCommand:jump.jump-to-the-end-of-a-word",
-    "onCommand:jump.select-to-the-start-of-a-word",
-    "onCommand:jump.select-to-the-end-of-a-word",
-    "onCommand:jump.exit"
+    "onCommand:jump-extension.jump-to-the-start-of-a-word",
+    "onCommand:jump-extension.jump-to-the-end-of-a-word",
+    "onCommand:jump-extension.select-to-the-start-of-a-word",
+    "onCommand:jump-extension.select-to-the-end-of-a-word",
+    "onCommand:jump-extension.exit"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "jump.jump-to-the-start-of-a-word",
+        "command": "jump-extension.jump-to-the-start-of-a-word",
         "title": "Jump to the Start of a word"
       },
       {
-        "command": "jump.jump-to-the-end-of-a-word",
+        "command": "jump-extension.jump-to-the-end-of-a-word",
         "title": "Jump to the End of a word"
       },
       {
-        "command": "jump.select-to-the-start-of-a-word",
+        "command": "jump-extension.select-to-the-start-of-a-word",
         "title": "Select to the Start of a word"
       },
       {
-        "command": "jump.select-to-the-end-of-a-word",
+        "command": "jump-extension.select-to-the-end-of-a-word",
         "title": "Select to the End of a word"
       },
       {
-        "command": "jump.exit",
+        "command": "jump-extension.exit",
         "title": "Exit jump mode"
       }
     ],
     "keybindings": [
       {
         "key": "alt+q alt+q",
-        "command": "jump.jump-to-the-start-of-a-word",
+        "command": "jump-extension.jump-to-the-start-of-a-word",
         "when": "editorTextFocus"
       },
       {
         "key": "alt+q alt+w",
-        "command": "jump.jump-to-the-end-of-a-word",
+        "command": "jump-extension.jump-to-the-end-of-a-word",
         "when": "editorTextFocus"
       },
       {
         "key": "alt+q alt+e",
-        "command": "jump.select-to-the-start-of-a-word",
+        "command": "jump-extension.select-to-the-start-of-a-word",
         "when": "editorTextFocus"
       },
       {
         "key": "alt+q alt+r",
-        "command": "jump.select-to-the-end-of-a-word",
+        "command": "jump-extension.select-to-the-end-of-a-word",
         "when": "editorTextFocus"
       },
       {
         "key": "escape",
-        "command": "jump.exit",
+        "command": "jump-extension.exit",
         "when": "editorTextFocus && jump.isInJumpMode"
       },
       {
         "key": "space",
-        "command": "jump.exit",
+        "command": "jump-extension.exit",
         "when": "editorTextFocus && jump.isInJumpMode"
       },
       {
         "key": "enter",
-        "command": "jump.exit",
+        "command": "jump-extension.exit",
         "when": "editorTextFocus && jump.isInJumpMode"
       }
     ],
