@@ -71,13 +71,16 @@ module.exports = {
     'no-empty': production ? 'error' : 'warn',
     'no-return-await': 'error',
     'no-throw-literal': 'error',
+    'no-unexpected-multiline': 'error',
     'no-unneeded-ternary': 'error',
     'no-unreachable': production ? 'error' : 'warn',
     'no-unused-expressions': [
       'error',
       {
         allowShortCircuit: true,
+        allowTaggedTemplates: true,
         allowTernary: true,
+        enforceForJSX: true,
       },
     ],
     'no-useless-backreference': 'error',
