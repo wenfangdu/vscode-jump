@@ -38,6 +38,10 @@
 
   ![Exit jump mode](https://raw.githubusercontent.com/wenfangdu/vscode-jump/main/images/exit-jump-mode.gif)
 
+## Known Issue
+
+Due to [a blocked VSCode issue](https://github.com/microsoft/vscode/issues/13441), Jump doesn't work with extensions that overwrite the [`type`](https://github.com/microsoft/vscode/blob/32659246788863a0783299f2ef93e6e4ccd9e0b4/src/vs/editor/browser/view/viewController.ts#L39) command, such as [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim).
+
 ## Inspired By
 
 - [Jumpy Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=wmaurer.vscode-jumpy)
