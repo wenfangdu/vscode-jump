@@ -221,7 +221,7 @@ export class Jump implements ExtensionComponent {
     this.handles[Command.Type] = commands.registerCommand(Command.Type, this.handleTypeEvent)
     this.handles[Command.ReplacePreviousChar] = commands.registerCommand(
       Command.ReplacePreviousChar,
-      // todo@wf noop extract
+      // TODO noop extract
       () => {},
     )
 
@@ -245,18 +245,18 @@ export class Jump implements ExtensionComponent {
     this.setJumpContext(false)
   }
 
-  private handleTypeEvent = (type: { text: string }): void => {
-    if (!TYPE_REGEX.test(type.text) || !this.state.isInJumpMode) {
+  private handleTypeEvent = ({ text }: { text: string }): void => {
+    if (!TYPE_REGEX.test(text) || !this.state.isInJumpMode) {
       this.state.typedCharacters = ''
       return
     }
 
     if (this.state.typedCharacters.length === 0) {
-      this.state.typedCharacters += type.text.toLowerCase()
+      this.state.typedCharacters += text.toLowerCase()
       return
     }
 
-    const code = this.state.typedCharacters + type.text.toLowerCase()
+    const code = this.state.typedCharacters + text.toLowerCase()
     const position = this.positions[code]
 
     if (position === undefined) {

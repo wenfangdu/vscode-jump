@@ -1,3 +1,4 @@
 {
-  "target": "minor"
+  "target": "minor",
+  "reject": "@types/vscode"
 }
