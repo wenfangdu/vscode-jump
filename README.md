@@ -10,37 +10,39 @@
 
 ## Commands
 
-- `Jump to the Start of a word`
-- `Jump to the End of a word`
-- `Select to the Start of a word`
-- `Select to the End of a word`
-- `Exit jump mode`
+- [`Jump to the Start of a word`](#demo-jump-to-the-start-of-a-word)
+- [`Jump to the End of a word`](#demo-jump-to-the-end-of-a-word)
+- [`Select to the Start of a word`](#demo-select-to-the-start-of-a-word)
+- [`Select to the End of a word`](#demo-select-to-the-end-of-a-word)
+- [`Exit jump mode`](#demo-exit-jump-mode)
 
 ## Demos
 
-- `Jump to the Start of a word`
+- <code id='demo-jump-to-the-start-of-a-word'>Jump to the Start of a word</code>
 
   ![Jump to the Start of a word](https://raw.githubusercontent.com/wenfangdu/vscode-jump/main/images/jump-to-the-start-of-a-word.gif)
 
-- `Jump to the End of a word`
+- <code id='demo-jump-to-the-end-of-a-word'>Jump to the End of a word</code>
 
   ![Jump to the End of a word](https://raw.githubusercontent.com/wenfangdu/vscode-jump/main/images/jump-to-the-end-of-a-word.gif)
 
-- `Select to the Start of a word`
+- <code id="demo-select-to-the-start-of-a-word">Select to the Start of a word</code>
 
   ![Select to the Start of a word](https://raw.githubusercontent.com/wenfangdu/vscode-jump/main/images/select-to-the-start-of-a-word.gif)
 
-- `Select to the End of a word`
+- <code id="demo-select-to-the-end-of-a-word">Select to the End of a word</code>
 
   ![Select to the End of a word](https://raw.githubusercontent.com/wenfangdu/vscode-jump/main/images/select-to-the-end-of-a-word.gif)
 
-- `Exit jump mode`
+- <code id="demo-exit-jump-mode">Exit jump mode</code>
 
   ![Exit jump mode](https://raw.githubusercontent.com/wenfangdu/vscode-jump/main/images/exit-jump-mode.gif)
 
-## Known Issue
+## Known Issues
 
-Due to [a blocked VSCode issue](https://github.com/microsoft/vscode/issues/13441), Jump doesn't work with extensions that overwrite the [`type`](https://github.com/microsoft/vscode/blob/32659246788863a0783299f2ef93e6e4ccd9e0b4/src/vs/editor/browser/view/viewController.ts#L39) command, such as [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim).
+- Doesn't work well with [input methods](https://en.wikipedia.org/wiki/Input_method), but if you're using them, I suggest before/after entering Jump mode, always switch to the English mode for the best experience.
+
+- Due to [a blocked upstream issue](https://github.com/microsoft/vscode/issues/13441), Jump doesn't work with extensions that overwrite the [`type`](https://github.com/microsoft/vscode/blob/32659246788863a0783299f2ef93e6e4ccd9e0b4/src/vs/editor/browser/view/viewController.ts#L39) command, such as [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim).
 
 ## Inspired By
 
