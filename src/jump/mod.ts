@@ -16,6 +16,7 @@ import { ExtensionComponent, Nullable } from './typings'
 
 const enum Command {
   Type = 'type',
+  ReplacePreviousChar = 'replacePreviousChar',
   Exit = 'jump-extension.exit',
   Enter = 'jump-extension.jump-to-the-start-of-a-word',
   EnterEOW = 'jump-extension.jump-to-the-end-of-a-word',
@@ -59,6 +60,7 @@ type State = StateJumpActive | StateJumpInactive
 
 const HANDLE_NAMES = [
   Command.Type,
+  Command.ReplacePreviousChar,
   Command.Exit,
   Command.Enter,
   Command.EnterEOW,
@@ -96,6 +98,7 @@ export class Jump implements ExtensionComponent {
     }
     this.handles = {
       [Command.Type]: null,
+      [Command.ReplacePreviousChar]: null,
       [Command.Exit]: null,
       [Command.Enter]: null,
       [Command.EnterEOW]: null,
@@ -216,6 +219,10 @@ export class Jump implements ExtensionComponent {
 
     this.setJumpContext(true)
     this.handles[Command.Type] = commands.registerCommand(Command.Type, this.handleTypeEvent)
+    this.handles[Command.ReplacePreviousChar] = commands.registerCommand(
+      Command.ReplacePreviousChar,
+      () => {},
+    )
 
     this.state.matchStartOfWord = matchStartOfWord
     this.state.expandSelection = expandSelection
@@ -233,6 +240,7 @@ export class Jump implements ExtensionComponent {
     this.state = { ...DEFAULT_STATE }
 
     this.tryDispose(Command.Type)
+    this.tryDispose(Command.ReplacePreviousChar)
     this.setJumpContext(false)
   }
 

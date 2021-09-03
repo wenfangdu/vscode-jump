@@ -92,7 +92,6 @@ module.exports = {
     'no-useless-return': 'error',
     'no-var': 'error',
     'object-shorthand': 'error',
-    'one-var': ['error', 'never'],
     'prefer-arrow-callback': 'error',
     'prefer-const': [
       'error',
