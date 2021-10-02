@@ -67,6 +67,7 @@ module.exports = {
           },
         ]
       : 'off',
+    'no-constant-condition': production ? 'error' : 'warn',
     'no-debugger': production ? 'error' : 'off',
     'no-empty': production ? 'error' : 'warn',
     'no-return-await': 'error',

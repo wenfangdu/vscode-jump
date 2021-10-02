@@ -206,7 +206,7 @@ export class Jump implements ExtensionComponent {
         this.state.matchStartOfWord === matchStartOfWord &&
         this.state.expandSelection === expandSelection
       ) {
-        return this.handleExitJumpMode()
+        return
       } else {
         this.handleExitJumpMode()
       }
