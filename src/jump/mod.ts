@@ -264,24 +264,21 @@ export class Jump implements ExtensionComponent {
       return
     }
 
+    const { line, char } = position
+
     if (this.state.expandSelection) {
       const [{ anchor }] = this.state.editor.selections.slice(-1)
-      const active = new Position(position.line, position.char)
+      const active = new Position(line, char)
       this.state.editor.selection = new Selection(anchor, active)
 
-      if (this.settings.cursorSurroundingLines) {
+      if (line && char && this.settings.cursorSurroundingLines) {
         commands.executeCommand('cursorLeftSelect')
         commands.executeCommand('cursorRightSelect')
       }
     } else {
-      this.state.editor.selection = new Selection(
-        position.line,
-        position.char,
-        position.line,
-        position.char,
-      )
+      this.state.editor.selection = new Selection(line, char, line, char)
 
-      if (this.settings.cursorSurroundingLines) {
+      if (line && char && this.settings.cursorSurroundingLines) {
         commands.executeCommand('cursorLeft')
         commands.executeCommand('cursorRight')
       }
