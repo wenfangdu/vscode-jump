@@ -38,11 +38,11 @@
 
   ![Exit jump mode](https://raw.githubusercontent.com/wenfangdu/vscode-jump/main/images/exit-jump-mode.gif)
 
-## Known Issues
+## Tips
 
-- Doesn't work well with [input methods](https://en.wikipedia.org/wiki/Input_method), but if you're using them, I suggest before/after entering Jump mode, always switch to the English mode for the best experience.
+- To run with other extensions that overwrite the [`type`](https://github.com/microsoft/vscode/blob/32659246788863a0783299f2ef93e6e4ccd9e0b4/src/vs/editor/browser/view/viewController.ts#L39) command such as [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim), please follow [this comment](https://github.com/microsoft/vscode/issues/65876#issuecomment-1078827200).
 
-- Due to [a blocked upstream issue](https://github.com/microsoft/vscode/issues/13441), Jump doesn't work with extensions that overwrite the [`type`](https://github.com/microsoft/vscode/blob/32659246788863a0783299f2ef93e6e4ccd9e0b4/src/vs/editor/browser/view/viewController.ts#L39) command, such as [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim).
+- If using [input method](https://en.wikipedia.org/wiki/Input_method), please switch to the English mode when jumping.
 
 ## Inspired By
 
