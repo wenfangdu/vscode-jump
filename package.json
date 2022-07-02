@@ -2,7 +2,7 @@
   "name": "jump",
   "displayName": "Jump",
   "description": "🏃‍♂️ Jump/Select to the Start/End of a word in VSCode",
-  "version": "0.7.8",
+  "version": "0.7.9",
   "publisher": "wenfangdu",
   "icon": "images/icon.png",
   "license": "MIT",
