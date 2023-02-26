@@ -1,7 +1,8 @@
 # Jump
 
-[![Version](https://vsmarketplacebadge.apphb.com/version-short/wenfangdu.jump.svg)](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
+[![Version](https://img.shields.io/visual-studio-marketplace/v/wenfangdu.jump?color=blue)](https://marketplace.visualstudio.com/items?itemName=wenfangdu.jump)
 [![License](https://img.shields.io/github/license/wenfangdu/vscode-jump?color=brightgreen)](https://github.com/wenfangdu/vscode-jump/blob/main/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blueviolet.svg)](https://github.com/wenfangdu/vscode-jump)
 [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dwenfangdu.jump)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dwenfangdu.jump)
 
 > 🏃‍♂️ Jump/Select to the Start/End of a word in VSCode

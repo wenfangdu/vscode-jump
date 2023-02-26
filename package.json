@@ -2,7 +2,7 @@
   "name": "jump",
   "displayName": "Jump",
   "description": "🏃‍♂️ Jump/Select to the Start/End of a word in VSCode",
-  "version": "0.7.9",
+  "version": "0.7.10",
   "publisher": "wenfangdu",
   "icon": "images/icon.png",
   "license": "MIT",
@@ -11,7 +11,7 @@
     "url": "https://github.com/wenfangdu/vscode-jump"
   },
   "engines": {
-    "vscode": "^1.50.0"
+    "vscode": "^1.74.0"
   },
   "categories": [
     "Other"
@@ -46,13 +46,6 @@
     "utility",
     "vim",
     "word"
-  ],
-  "activationEvents": [
-    "onCommand:jump-extension.jump-to-the-start-of-a-word",
-    "onCommand:jump-extension.jump-to-the-end-of-a-word",
-    "onCommand:jump-extension.select-to-the-start-of-a-word",
-    "onCommand:jump-extension.select-to-the-end-of-a-word",
-    "onCommand:jump-extension.exit"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -150,7 +143,7 @@
     "@types/glob": "^7.1.4",
     "@types/mocha": "^8.2.3",
     "@types/node": "^15.14.9",
-    "@types/vscode": "^1.50.0",
+    "@types/vscode": "^1.74.0",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
     "cross-env": "^7.0.3",
