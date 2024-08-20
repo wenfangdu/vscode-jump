@@ -45,8 +45,8 @@ interface DecorationOptions {
 
 // Default values
 const DEFAULT_REGEX_FLAGS = 'gi'
-const DEFAULT_JUMP_REGEXP = /[\wА-Яа-яЁё]{2,}/g
-const DEFAUlT_JUMP_REGEXP_EOW = /(?<=[\wА-Яа-яЁё]{2})(\b|-|\s)/gi
+const DEFAULT_JUMP_REGEXP = /[\wА-яЁё]{2,}/g
+const DEFAUlT_JUMP_REGEXP_EOW = /(?<=[\wА-яЁё]{2})(\b|-|\s|,|\.)/gi
 const DEFAULT_USE_ICONS = true
 
 const DATA_URI = Uri.parse('data:')
